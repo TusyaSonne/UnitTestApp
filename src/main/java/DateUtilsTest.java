@@ -10,15 +10,6 @@ public class DateUtilsTest {
 
     private final DateUtils dateUtils = new DateUtils();
 
-    // Тестирование функции проверки на високосный год
-    @Test
-    public void testIsLeapYear() {
-        assertTrue(dateUtils.isLeapYear(2020)); // Високосный год
-        assertFalse(dateUtils.isLeapYear(2021)); // Не високосный год
-        assertTrue(dateUtils.isLeapYear(2000)); // Високосный
-        assertFalse(dateUtils.isLeapYear(1900)); // Не високосный
-    }
-
     // Тестирование функции добавления дней к дате
     @Test
     public void testAddDays() {

@@ -3,33 +3,27 @@ import java.time.temporal.ChronoUnit;
 
 public class DateUtils {
 
-    // Функция 1: Проверка, является ли год високосным
-    public boolean isLeapYear(int year) {
-        return ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
-    }
-
-    // Функция 2: Добавление дней к дате
+    // Функция 1: Добавление дней к дате
     public LocalDate addDays(LocalDate date, int days) {
         return date.plusDays(days);
     }
 
-    // Функция 3: Определение дня недели по дате
+    // Функция 2: Определение дня недели по дате
     public String getDayOfWeek(LocalDate date) {
         return date.getDayOfWeek().toString();
     }
 
-    // Функция 4: Проверка, прошла ли дата
+    // Функция 3: Проверка, прошла ли дата
     public boolean hasDatePassed(LocalDate date) {
         return date.isBefore(LocalDate.now());
     }
 
-    // Функция 5: Вычисление разницы в днях между двумя датами
-    // Здесь намеренно сделана ошибка: разница всегда возвращается положительной
+    // Функция 4: Вычисление разницы в днях между двумя датами
     public long daysBetween(LocalDate start, LocalDate end) {
-        return ChronoUnit.DAYS.between(start, end); // Ошибка: всегда возвращаем положительное значение
+        return ChronoUnit.DAYS.between(start, end);
     }
 
-    // Функция 6: Нахождение следующего високосного года (с ошибкой)
+    // Функция 5: Нахождение следующего високосного года (с ошибкой)
     public int findNextLeapYear(int currentYear) {
         int nextYear = currentYear + 1;
         // Ошибка: учитывается только кратность 4, без проверки на кратность 100 и 400
